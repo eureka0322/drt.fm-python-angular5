@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="The podcast show that interviews the biggest names in business, design and tech">
+  {% block header %}
+    <title>{% block title %}{{AppName}}{% endblock %}</title>
+  {% endblock header %}
+  <base href="/" />
+
+</head>
+
+<body>
+
+IMPORTED DATA
+
+<BR><BR>
+
+{% for item in items  %}
+  <div>
+    <p>
+      URL: {{ item.url }}<BR>
+      DURATION: {{ item.duration }}<BR>
+    </p>
+  </div>
+{% endfor %}
+
+{#  {{ rss }}#}
+
+</body>
+
+</html>

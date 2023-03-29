@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="google-site-verification" content="-ThwfA1Lrn6_0N5un6ah0UG9lZA6Kxwu2CTRTVTu_Ls" />
+  {% block header %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="{{ post.description }}">
+  <title>{% block title %}{{ post.title }} - {{ post.guest }}, {{ post.job }} | {{AppName}}{% endblock %}</title>
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image" />
+  {% if post.twitter %}
+  <meta name="twitter:site" content="@{{ post.twitter }}" />
+  {% endif %}
+  <meta name="twitter:title" content="{{ post.title }}" />
+  <meta name="twitter:description" content="{{ post.description|truncatechars:200 }}" />
+  <meta name="twitter:creator" content="@dormroomtycoon" />
+  <meta name="twitter:image" content="{{ post.image }}?fit=crop&w=408&h=208&crop=faces&auto=format,compress&cs=tinysrgb" />
+  <meta name="twitter:image:alt" content="DRT" />
+
+  <!-- Open Graph data -->
+  <meta property="og:image" content="{{ post.image }}?fit=crop&w=408&h=208&crop=faces&auto=format,compress&cs=tinysrgb" />
+  <meta property="og:title" content="{{ post.title }}" />
+  <meta property="og:description" content="{{ post.description }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://drt.fm/{{ post.slug }}" />
+  <meta property="og:site_name" content="Dorm Room Tycoon" />
+  {% endblock header %}
+  <link rel="canonical" href="https://drt.fm/{{ post.slug }}" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NS2DMNW');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS2DMNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+  <nav>
+    <a href="/" title="Dorm Room Tycoon Home">DRT</a>
+    <a href="http://usepanda.us3.list-manage2.com/subscribe?u=c9215d3c9c7d11b30022104b1&amp;id=298870c1e0"
+       target="_blank" title="Subscribe to our newsletter">Subscribe</a>
+    <a href="/about" title="About Dorm Room Tycoon">About</a>
+  </nav>
+</header>
+
+<h1>{{ post.title }}</h1>
+
+<h2>An interview with {{ post.guest }}</h2>
+
+<img src="{{ post.image }}?fit=crop&w=408&h=208&crop=faces&auto=format,compress&cs=tinysrgb" alt="{{ post.guest }}" title="{{ post.guest }}" height="300">
+
+<main>
+  <h2>Description:</h2>
+
+  <p>{{ post.description }}</p>
+
+  <h2>Quote:</h2>
+
+  <p>{{ post.quote }}</p>
+  {# <h2>About:</h2>#}
+  {# <p>{{ post.about }}</p>#}
+  <h2>Interview:</h2>
+  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a><br>
+
+  <b>Published on:</b>
+  <time>{{ post.date }}</time>
+  <br>
+  <b>Twitter:</b> <a href="https://twitter.com/{{ post.twitter }}" title="{{ post.guest }} on Twitter">@{{ post.twitter
+  }}</a><br>
+  <b>Education:</b> <a href="{{ post.educationUrl }}" title="{{ post.education }}">{{ post.education }}</a><br>
+  <b>Favourite App:</b> <a href="{{ post.appUrl }}" title="{{ post.app }}">{{ post.app }}</a><br>
+  <b>Favourite Book:</b> <a href="{{ post.bookUrl }}" title="{{ post.book }}">{{ post.book }}</a><br>
+  {% if post.romeModel %}
+  <b>Role model:</b> <a href="{{ post.roleModelUrl }}" title="{{ post.romeModel }}">{{ post.romeModel }}</a><br>
+  {% endif %}
+</main>
+
+<br>
+
+<footer>
+
+  All interviews by William Channer </br>
+  <a href="http://codeberry.io" title="We help Startups build products">Website by Codeberry</a>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://google.com/article"
+  },
+  "headline": "{{ post.title }}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ post.image }}?fit=crop&w=696&h=773",
+    "height": 696,
+    "width": 773
+  },
+  "datePublished": "{{ post.date|date:"c" }}T00:00:00+01:00",
+  "dateModified": "{{ post.date|date:"c" }}T00:00:00+01:00",
+  "author": {
+    "@type": "Person",
+    "name": "{{ post.guest }}"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Dorm Room Tycoon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://drt-resources.imgix.net/uploads/drt.jpg?fit=crop&w=48&h=48",
+      "width": 48,
+      "height": 48
+    }
+  },
+  "description": "{{ post.description }}"
+}
+</script>
+<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+{% load assets %}
+{% assets 'angular' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+{% assets 'app' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+{% assets 'index' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+</body>
+</html>

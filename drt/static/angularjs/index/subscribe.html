@@ -1,0 +1,20 @@
+<div class="subscribe-view">
+    <div class="subscribe-div main-color">
+        <a class="absolute right-0 z4 pointer p2" style="fill: white;" ng-click="vm.closeSubscribe($event)">
+            <svg width="12" height="12"><use xlink:href="#close"></use></svg>
+        </a>
+        <form name="subscribeForm" ng-submit="vm.doSubmit($event)" action="https://mailblast.io/lists/cf16df11-82ce-43a6-95b3-27281db3f0ad/subscribers/create_external" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" novalidate class="flex flex-column items-center justify-center pb2 px2">
+            <span class="drt-logo mx-auto block mt2"><svg class="main-color px1"><use xlink:href="#drt-logo"></use></svg></span>
+            <h1 class="subscribe-page__title my2">
+                Want to build a successful startup? Enter your email and get inspired by those that have already done it 💪
+            </h1>
+
+            <input id="mb-email" type="email" value="" ng-model="email" ng-change="vm.restoreBtn()" name="subscriber[email]" class="input main-font h3 mb2" placeholder="Email your email address" autocomplete="off" />
+            <input type="hidden" name="mb_cf16df1182ce43a695b327281db3f0ad" tabindex="-1" value="" />
+            <button type="submit" name="subscribe" id="mc-embedded-subscribe" ng-class="{'load': vm.loading }" class="btn py2 px4 mt3 subscribe-btn btn-main-on-hover main-font bold bg-white main-color items-center rounded-50 pointer mt1">
+                <span ng-if="vm.loading == false">{{ vm.submitBtn }}</span>
+                <span class="icon-loading loading-small mx-auto" ng-if="vm.loading" />
+            </button>
+        </form>
+    </div>
+</div>

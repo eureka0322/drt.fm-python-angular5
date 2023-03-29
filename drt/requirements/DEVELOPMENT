@@ -1,0 +1,5 @@
+-r COMMON
+ipdb==0.7
+livereload
+Jinja2
+django-debug-toolbar==1.4

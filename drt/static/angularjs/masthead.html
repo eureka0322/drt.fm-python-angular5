@@ -1,0 +1,60 @@
+<div class="masthead main-font" tabindex="-1">
+    <div class="absolute imgbg md-hide sm-hide xs-hide">
+        <svg class="fill-main-color main-color" width="100%">
+          <use xlink:href="#masthead-bg"></use>
+        </svg>
+    </div>
+    <div class="col-12 lg-col-10 mx-auto my4 pt1 px1 clearfix inner">
+        <div class="col col-12 lg-col-6 site-copy">
+            <div class="site-introduction pr1">
+                <h1 class="title main-font mb2"><small>Welcome to</small> Dorm Room Tycoon <span class="hand-icon md-hide sm-hide xs-hide">👋</span></h1>
+                <p class="description mb2 lh-26">
+                    The podcast show that teaches you how to build a successful startup. Listen to fascinating interviews with industry leaders and learn how they did it.
+                </p>
+                <div class="pt3">
+                    <a href="https://itunes.apple.com/us/podcast/dorm-room-tycoon/id355125543?mt=2" class="btn inline-block px3 main-font bold bg-main-color white items-center rounded-50 mr2 mt1" target="_blank">
+                        <span class="flex items-center ">
+                          <span>LISTEN ON</span>
+                          <span class="ml1"><svg width="22px" height="22px"><use xlink:href='#applelogo'></use></svg></span>
+                        </span>
+                    </a>
+                    <button ng-click="vm.showSubscribe()" class="btn py2 px3 border-white subscribe-btn btn-main-on-hover main-font bold bg-white main-color items-center rounded-50 pointer mt1">
+                        <span>SUBSCRIBE</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col col-7 lg-col-6 col-sm-12 right-align featured parent-perspective">
+            <div
+                class="featured-post main-font clearfix"
+                style="background: url(/static/images/billgates.png) no-repeat; background-size: cover;"
+                ng-style="{'background': 'rgba(0,0,0,0.3) url(\'' + vm.featured.image + '?fit=crop&w=601&h=430\') no-repeat center center/cover'}"
+                tilt-hover
+
+            >
+                <div ng-click="vm.showProfile(vm.featured)" class="featured-post-overlay"></div>
+                <div class="p3 col-8 flex flex-column justify-center inner left-align">
+                    <b>FEATURED</b>
+                    <h5 class="subtitle main-font" ng-click="vm.showProfile(vm.featured)">{{ vm.featured.guest }}, {{ vm.featured.job }}</h5>
+                    <h1 class="title main-font mt1 mb2" ng-click="vm.showProfile(vm.featured)">{{ vm.featured.title }}</h1>
+                    <button type="button" aria-label="Play" ng-click="vm.toggle()"
+                        class="player-btn profile-play bg-white border-white flex items-center rounded-50 mr2 fill-main-color main-color">
+
+                      <div ng-if="vm.player._loading" class="loading-small mx-auto"></div>
+
+                      <svg class="play-btn" ng-if="(vm.player.item.id != vm.featured.id || !vm.player._playing) && !vm.player._loading">
+                        <use xlink:href="#plyr-play" width="18px" height="18px"></use>
+                      </svg>
+
+                      <svg class="pause-btn" ng-if="vm.player.item.id == vm.featured.id && vm.player._playing && !vm.player._loading">
+                        <use xlink:href="#pause-btn" width="27px" height="27px"></use>
+                      </svg>
+
+                      <span ng-if="(vm.player.item.id != vm.featured.id || !vm.player._playing) && !vm.player._loading" class="ml1" style="line-height: 27px;">PLAY</span>
+                      <span ng-if="vm.player.item.id == vm.featured.id && vm.player._playing" class="ml1" style="line-height: 27px;">PAUSE</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

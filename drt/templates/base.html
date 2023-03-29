@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-cloak ng-controller="BaseCtrl as vm" ng-cloak>
+<head>
+  <meta name="google-site-verification" content="-ThwfA1Lrn6_0N5un6ah0UG9lZA6Kxwu2CTRTVTu_Ls" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Dorm Room Tycoon is the podcast show that teaches you how to build a successful startup. Listen to fascinating interviews with industry leaders and learn how they did it.">
+
+<meta property="og:title" content="Dorm Room Tycoon | DRT.fm" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Dorm Room Tycoon is the podcast show that teaches you how to build a successful startup. Listen to fascinating interviews with industry leaders and learn how they did it." />
+<meta property="og:image" content="https://s3.amazonaws.com/drt-resources/uploads/images/drt-social.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:url" content="https://drt.fm" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:site_name" content="Dorm Room Tycoon" />
+<meta name="twitter:image:alt" content="DRT logo" />
+<meta property="fb:app_id" content="730277737173946" />
+<meta name="twitter:site" content="@dormroomtycoon" />
+
+  <link rel="canonical" href="https://drt.fm" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/images/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/static/images/favicon/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/static/images/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/static/images/favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/static/images/favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="/static/images/favicon/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="/static/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/static/images/favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/static/images/favicon/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/static/images/favicon/favicon-128.png" sizes="128x128" />
+
+  <meta name="application-name" content="&nbsp;"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="/static/images/favicon/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="/static/images/favicon/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="/static/images/favicon/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="/static/images/favicon/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="/static/images/favicon/mstile-310x310.png" />
+
+{#  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">#}
+  <link href="/static/dest/style.min.css" rel="stylesheet">
+
+  {% block header %}
+    <title ng-cloak ng-bind="vm.style.title">{% block title %}{{AppName}}{% endblock %}</title>
+  {% endblock header %}
+
+  {% verbatim %}
+  <style>
+    .main-color{ color: {{vm.category.selected.color}};}
+    .bg-main-color{ background-color: {{vm.category.selected.color}};}
+    .border-main-color{ border-color: {{vm.category.selected.color}};}
+    .fill-main-color { fill: {{vm.category.selected.color}}; }
+    .category-button.is-active{ background-color: {{vm.category.selected.color}};}
+    .control-button {background-color: {{vm.category.selected.color}}; color:{{vm.category.selected.color}};}
+    .control-button.is-playing{background-color: white; color: {{vm.category.selected.color}};}
+    .plyr__progress--played, .plyr__volume--display{ color: {{vm.category.selected.color}};}
+    .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover, .plyr__play-large{background-color: {{vm.category.selected.color}};}
+    .plyr__controls .plyr--playing{background-color: {{vm.category.selected.color}};}
+    .plyr--audio .plyr__controls button[data-plyr="play"]{background-color: {{vm.category.selected.color}};}
+    .plyr input[type=range]:active::-webkit-slider-thumb {
+    	background: {{vm.category.selected.color}};}
+    .plyr input[type=range]:active::-moz-range-thumb {
+    	background: {{vm.category.selected.color}};}
+    .plyr input[type=range]:active::-ms-thumb {
+    	background: {{vm.category.selected.color}};}
+  </style>
+  {% endverbatim %}
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NS2DMNW');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="stylesheet" href="//panda.network/modal/info-modal.css?v=10" />
+{#<script src="//panda.network/modal/info-modal-standalone.js?v=3"></script>#}
+</head>
+
+<body ng-class="[vm.category.selected.slug, vm.style.body]" twitter-widget-initialize>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS2DMNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="svg-sprite" class="hide">
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="drt-logo" viewBox="80 12 130 40">
+      <g id="drt-logo-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(80.000000, 12.000000)">
+        <rect id="Rectangle-1" fill="currentColor" x="45" y="0" width="40" height="40"></rect>
+        <rect id="Rectangle-2" fill="currentColor" x="0" y="0" width="40" height="40"></rect>
+        <rect id="Rectangle-3" fill="currentColor" x="90" y="0" width="40" height="40"></rect>
+        <path d="M11.234375,31 L11.234375,9.671875 L19.421875,9.671875 C22.088555,9.671875 24.4270733,10.6145739 26.4375,12.5 C27.5833391,13.5625053 28.4635386,14.8124928 29.078125,16.25 C29.6510445,17.5937567 29.9375,18.9531181 29.9375,20.328125 C29.9375,22.3489684 29.3645891,24.2551994 28.21875,26.046875 C27.0729109,27.8281339 25.5729259,29.1562456 23.71875,30.03125 C22.3437431,30.6770866 20.9114658,31 19.421875,31 L11.234375,31 Z M16.78125,26.3125 L18.046875,26.3125 C19.0885469,26.3125 19.9687464,26.1718764 20.6875,25.890625 C21.4062536,25.6093736 22.0416639,25.1562531 22.59375,24.53125 C23.6250052,23.3749942 24.140625,21.9739666 24.140625,20.328125 C24.140625,18.6927002 23.6250052,17.2968808 22.59375,16.140625 C22.0416639,15.5156219 21.4062536,15.0625014 20.6875,14.78125 C19.9687464,14.4999986 19.0885469,14.359375 18.046875,14.359375 L16.78125,14.359375 L16.78125,26.3125 Z" id="D" fill="#FFFFFF"></path>
+        <path d="M68.265625,22.25 L74.96875,31 L68.0625,31 L62.78125,22.8125 L62.78125,31 L57.234375,31 L57.234375,9.671875 L65.859375,9.671875 C67.0572977,9.671875 68.0755166,9.82291516 68.9140625,10.125 C69.7526084,10.4270848 70.4791636,10.9010384 71.09375,11.546875 C72.3125061,12.8385481 72.921875,14.4114491 72.921875,16.265625 C72.921875,17.2031297 72.7473976,18.0937458 72.3984375,18.9375 C72.0494774,19.7812542 71.578128,20.4635391 70.984375,20.984375 C70.317705,21.5677112 69.4114641,21.989582 68.265625,22.25 L68.265625,22.25 Z M62.78125,19.21875 L63.8125,19.21875 C64.8645886,19.21875 65.6562473,19.0312519 66.1875,18.65625 C66.4791681,18.4374989 66.7239573,18.1328145 66.921875,17.7421875 C67.1197927,17.3515605 67.21875,16.9635436 67.21875,16.578125 C67.21875,16.1927064 67.1197927,15.8046895 66.921875,15.4140625 C66.7239573,15.0234355 66.4791681,14.7187511 66.1875,14.5 C65.6562473,14.1249981 64.8645886,13.9375 63.8125,13.9375 L62.78125,13.9375 L62.78125,19.21875 Z" id="R" fill="#FFFFFF"></path>
+        <polygon id="T" fill="#FFFFFF" points="112.28125 14.359375 112.28125 31 106.734375 31 106.734375 14.359375 102.21875 14.359375 102.21875 9.671875 116.875 9.671875 116.875 14.359375"></polygon>
+      </g>
+    </symbol>
+    <symbol id="search-icon" viewBox="0 6 17 16">
+      <path d="M7,18 C4.243,18 2,15.757 2,13 C2,10.243 4.243,8 7,8 C9.757,8 12,10.243 12,13 C12,15.757 9.757,18 7,18 L7,18 Z M15.707,20.293 L12.595,17.201 C12.593,17.199 12.591,17.199 12.589,17.197 C13.471,16.025 14,14.575 14,13 C14,9.141 10.859,6 7,6 C3.14,6 0,9.141 0,13 C0,16.859 3.14,20 7,20 C8.575,20 10.025,19.471 11.196,18.59 C11.198,18.592 11.198,18.594 11.2,18.596 L14.293,21.707 C14.488,21.902 14.744,22 15,22 C15.256,22 15.512,21.902 15.707,21.707 C16.098,21.316 16.098,20.684 15.707,20.293 L15.707,20.293 Z" stroke="none" fill="currentColor" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="play-btn" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z" fill="currentColor"></path>
+    </symbol>
+    <symbol id="pause-btn" viewBox="0 0 24 24">
+      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/>
+    </symbol>
+    <symbol id="rewind-btn" viewBox="0 4 20 16">
+      <path d="M5.03237419,11.968251 L9.65825854,7.13240211 C10.0322492,6.7424143 10.0322492,6.10643417 9.65825854,5.71444642 L8.30029249,4.29249086 C7.92630184,3.90250305 7.31831704,3.90250305 6.94432639,4.29249086 L0.280492988,11.2582732 C-0.0934976626,11.6522609 -0.0934976626,12.2862411 0.280492988,12.6802287 L7.00432489,19.7060092 C7.37831554,20.0979969 7.98630034,20.0979969 8.36229094,19.7060092 L9.71825704,18.2880535 C10.0942476,17.8940658 10.0942476,17.2600856 9.71825704,16.8680979 L5.03237419,11.968251 Z M19.718007,16.8680979 L15.0321242,11.968251 L19.6580085,7.13240211 C20.0319992,6.7424143 20.0319992,6.10643417 19.6580085,5.71444642 L18.3000425,4.29249086 C17.9260518,3.90250305 17.318067,3.90250305 16.9440764,4.29249086 L10.280243,11.2582732 C9.90625234,11.6522609 9.90625234,12.2862411 10.280243,12.6802287 L17.0040749,19.7060092 C17.3780655,20.0979969 17.9860503,20.0979969 18.3620409,19.7060092 L19.718007,18.2880535 C20.0939977,17.8940658 20.0939977,17.2600856 19.718007,16.8680979 Z"  stroke="none" fill="currentColor" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="forward-btn" viewBox="114 4 20 16">
+      <path d="M133.718007,11.32 L126.996175,4.294 C126.620184,3.902 126.0142,3.902 125.638209,4.294 L124.280243,5.712 C123.906252,6.106 123.906252,6.74 124.280243,7.132 L128.966126,12.032 L124.342241,16.866 C123.966251,17.258 123.966251,17.894 124.342241,18.286 L125.698208,19.706 C126.074198,20.098 126.682183,20.098 127.056174,19.706 L133.718007,12.742 C134.093998,12.348 134.093998,11.714 133.718007,11.32 Z M116.996425,4.294 C116.620434,3.902 116.01445,3.902 115.638459,4.294 L114.280493,5.712 C113.906502,6.106 113.906502,6.74 114.280493,7.132 L118.966376,12.032 L114.342491,16.866 C113.966501,17.258 113.966501,17.894 114.342491,18.286 L115.698458,19.706 C116.074448,20.098 116.682433,20.098 117.056424,19.706 L123.718257,12.742 C124.094248,12.348 124.094248,11.714 123.718257,11.32 L116.996425,4.294 Z" stroke="none" fill="currentColor" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="mute-btn" viewBox="568 6 9 17">
+      <path d="M576.041,7.14061502 L572,11.0212083 L569,11.0212083 C568.447,11.0212083 568,11.4830409 568,12.0248444 L568,17.9746876 C568,18.5164912 568.447,19.0183093 569,19.0183093 L572,19.0183093 L576.062,22.9108982 C576.062,22.9108982 577,23.4596992 577,21.8332888 L577,8.10126677 C577,6.45786252 576.041,7.14061502 576.041,7.14061502" stroke="none" fill="currentColor" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="twitter-btn" viewBox="8 9 16 13">
+      <path d="M23.8,10.574625 C23.2255455,10.830075 22.6091529,11.001675 21.9615505,11.079675 C22.6228071,10.68285 23.1299656,10.0569 23.3698906,9.3081 C22.7505721,9.675675 22.0649328,9.942825 21.3363801,10.085175 C20.7521726,9.463125 19.9192623,9.0741 18.9995499,9.0741 C17.2313223,9.0741 15.7976243,10.508325 15.7976243,12.275025 C15.7976243,12.526575 15.8259081,12.770325 15.8805252,13.004325 C13.2198937,12.871725 10.8596561,11.5974 9.2806377,9.66105 C9.00657706,10.13295 8.84857768,10.68285 8.84857768,11.2698 C8.84857768,12.380325 9.58785871,13.359225 10.4471022,13.9335 C9.92238825,13.916925 9.17042826,13.77165 9.17042826,13.5318 L9.17042826,13.573725 C9.17042826,15.123975 10.0998937,16.416825 11.5638262,16.71225 C11.2956174,16.7844 10.9259769,16.824375 10.6343607,16.824375 C10.4275961,16.824375 10.1837699,16.8039 9.98773367,16.765875 C10.3954111,18.037275 11.5560238,18.963525 12.9565614,18.98985 C11.8612942,19.846875 10.4685589,20.35875 8.96951547,20.35875 C8.71105971,20.35875 8.45065333,20.344125 8.2,20.314875 C9.61711785,21.221625 11.297568,21.753 13.1048078,21.753 C18.9946733,21.753 22.2131791,16.87605 22.2131791,12.6465 C22.2131791,12.50805 22.2092779,12.368625 22.2024508,12.23115 C22.8285964,11.779725 23.3718412,11.216175 23.8,10.574625"  stroke="none" fill="currentColor" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="info-btn" viewBox="9 9 14 13">
+      <path d="M15.7,9 C17.4955337,9 19.0277329,9.63444582 20.2966435,10.9033565 C21.5655542,12.1722671 22.2,13.7044663 22.2,15.5 C22.2,17.2955337 21.5655542,18.8277329 20.2966435,20.0966435 C19.0277329,21.3655542 17.4955337,22 15.7,22 C13.9044663,22 12.3722671,21.3655542 11.1033565,20.0966435 C9.83444582,18.8277329 9.2,17.2955337 9.2,15.5 C9.2,13.7044663 9.83444582,12.1722671 11.1033565,10.9033565 C12.3722671,9.63444582 13.9044663,9 15.7,9 L15.7,9 Z M16.5125,19.5625 L16.5125,14.9583333 L14.8875,14.9583333 L14.8875,19.5625 L16.5125,19.5625 Z M15.7,13.6041667 C16.0009274,13.6041667 16.2567119,13.4988436 16.4673611,13.2881944 C16.6780103,13.0775452 16.7833333,12.8217608 16.7833333,12.5208333 C16.7833333,12.2199059 16.6780103,11.9641214 16.4673611,11.7534722 C16.2567119,11.542823 16.0009274,11.4375 15.7,11.4375 C15.3990726,11.4375 15.1432881,11.542823 14.9326389,11.7534722 C14.7219897,11.9641214 14.6166667,12.2199059 14.6166667,12.5208333 C14.6166667,12.8217608 14.7219897,13.0775452 14.9326389,13.2881944 C15.1432881,13.4988436 15.3990726,13.6041667 15.7,13.6041667 L15.7,13.6041667 Z" stroke="none" fill="currentColor" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="download-btn" viewBox="9 9 14 13">
+      <path d="M21.0166667,22 L10.1833333,22 C10.103086,22 10.0378861,21.9749231 9.98773148,21.9247685 C9.93757691,21.8746139 9.9125,21.809414 9.9125,21.7291667 L9.9125,20.1041667 C9.9125,20.0239194 9.93757691,19.9587194 9.98773148,19.9085648 C10.0378861,19.8584102 10.103086,19.8333333 10.1833333,19.8333333 L21.0166667,19.8333333 C21.096914,19.8333333 21.1621139,19.8584102 21.2122685,19.9085648 C21.2624231,19.9587194 21.2875,20.0239194 21.2875,20.1041667 L21.2875,21.7291667 C21.2875,21.809414 21.2624231,21.8746139 21.2122685,21.9247685 C21.1621139,21.9749231 21.096914,22 21.0166667,22 L21.0166667,22 Z M21.2122685,13.2581019 L15.7956019,18.6747685 C15.7253855,18.7249231 15.6601855,18.75 15.6,18.75 C15.5398145,18.75 15.4746145,18.7249231 15.4043981,18.6747685 L9.98773148,13.2581019 C9.90748417,13.1778545 9.88742264,13.0775469 9.9275463,12.9571759 C9.97770087,12.8468359 10.0629624,12.7916667 10.1833333,12.7916667 L13.1625,12.7916667 L13.1625,9.27083333 C13.1625,9.19058602 13.1875769,9.12538605 13.2377315,9.07523148 C13.2878861,9.02507691 13.353086,9 13.4333333,9 L17.7666667,9 C17.846914,9 17.9121139,9.02507691 17.9622685,9.07523148 C18.0124231,9.12538605 18.0375,9.19058602 18.0375,9.27083333 L18.0375,12.7916667 L21.0166667,12.7916667 C21.1370376,12.7916667 21.2222991,12.8468359 21.2724537,12.9571759 C21.3125774,13.0775469 21.2925158,13.1778545 21.2122685,13.2581019 L21.2122685,13.2581019 Z" stroke="none" fill="currentColor" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="volume-off" viewBox="0 0 24 24">
+      <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 0 0 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+    </symbol>
+    <symbol id="volume-up" viewBox="0 0 24 24">
+      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+    </symbol>
+    <symbol id="applelogo" viewBox="0 0 18 22">
+      <path d="M17.9025,16.0123333 C17.8438333,16.1779444 17.787,16.3557778 17.7216111,16.5305556 C17.1801667,17.9966111 16.3582222,19.2982778 15.3608889,20.4911667 C15.1683889,20.7233889 14.9441111,20.9336111 14.7125,21.1285556 C14.2547778,21.516 13.728,21.7500556 13.1187222,21.7714444 C12.661,21.7861111 12.2216111,21.703 11.7981111,21.5306667 C11.4913333,21.4053889 11.1894444,21.2654444 10.8783889,21.1523889 C9.86883333,20.7857222 8.86477778,20.834 7.87172222,21.2263333 C7.51361111,21.3681111 7.16038889,21.5245556 6.79555556,21.6473889 C6.37266667,21.7891667 5.93388889,21.8466111 5.48716667,21.7622778 C5.09727778,21.6895556 4.75627778,21.5080556 4.43972222,21.274 C4.04677778,20.9831111 3.71677778,20.6286667 3.40816667,20.2534444 C1.947,18.4714444 0.966166667,16.4566111 0.492555556,14.1997778 C0.288444444,13.2293333 0.190666667,12.2509444 0.250555556,11.2591111 C0.320833333,10.0698889 0.597055556,8.9375 1.23261111,7.91694444 C2.03011111,6.63422222 3.15516667,5.79394444 4.63527778,5.44744444 C5.52566667,5.23783333 6.39161111,5.32338889 7.24044444,5.65033333 C7.68716667,5.82144444 8.13511111,5.99072222 8.58366667,6.15877778 C8.99677778,6.314 9.40805556,6.314 9.82177778,6.15572222 C10.2795,5.98094444 10.7378333,5.80677778 11.1973889,5.63627778 C11.6685556,5.46455556 12.1476667,5.324 12.6475556,5.28427778 C13.3955556,5.22377778 14.1252222,5.32094444 14.8353333,5.55866667 C15.8418333,5.89538889 16.6607222,6.49122222 17.2791667,7.359 C17.2956667,7.38283333 17.314,7.40911111 17.3262222,7.42805556 C15.7666667,8.51522222 14.8787222,9.95133333 15.0076667,11.8958889 C15.1378333,13.8416667 16.1852778,15.158 17.9025,16.0123333 Z M9.15444444,5.0435 C9.61461111,5.05572222 10.0570556,4.96711111 10.483,4.79783333 C12.4257222,4.02661111 13.4413889,1.97144444 13.4108333,0.399666667 C13.4083889,0.273166667 13.3998333,0.146666667 13.3943333,0 C13.1945,0.0299444444 13.0123889,0.044 12.8376111,0.088 C11.4192222,0.435722222 10.3277778,1.22711111 9.61033333,2.50861111 C9.1905,3.25905556 8.95705556,4.05594444 9.02855556,4.92677778 C9.03344444,5.01905556 9.06705556,5.04227778 9.15444444,5.0435 Z" fill="#fff"></path>
+    </symbol>
+    <symbol id="soundcloudlogo" viewBox="0 0 37 16">
+      <path d="M0,11.5205667 C0,12.7715778 0.569388889,13.8902111 1.46684444,14.6441889 L1.46684444,8.399 C0.569388889,9.15092222 0,10.2703778 0,11.5205667 M3.01837778,7.5776 L3.01837778,15.4639444 C3.38467778,15.5650778 3.77153333,15.6222222 4.1699,15.6222222 L4.57032222,15.6222222 L4.57032222,7.43864444 C4.43671111,7.42754444 4.3031,7.42014444 4.16743333,7.42014444 C3.76783333,7.42014444 3.38344444,7.47564444 3.01837778,7.5776 M6.4454,8.08943333 C6.33933333,8.0216 6.23367778,7.95911111 6.12103333,7.90155556 L6.12103333,15.6222222 L7.67215556,15.6222222 L7.67215556,5.29552222 C7.05466667,6.1013 6.62423333,7.05261111 6.4454,8.08943333 M9.2241,3.84347778 L9.2241,15.6222222 L10.7756333,15.6222222 L10.7756333,3.07963333 C10.2210444,3.26627778 9.70057778,3.5261 9.2241,3.84347778 M12.3267556,2.75855556 L12.3267556,15.6222222 L13.8782889,15.6222222 L13.8782889,2.80583333 C13.5605,2.75855556 13.2332556,2.73388889 12.8998444,2.73388889 C12.7058,2.73388889 12.5146333,2.74334444 12.3267556,2.75855556 M16.2849333,3.66546667 C15.7784444,3.36535556 15.2333111,3.12855556 14.6544667,2.97068889 L14.6544667,15.6222222 L16.9813556,15.6222222 L16.9813556,2.73224444 C16.7272889,3.02536667 16.4937778,3.33822222 16.2849333,3.66546667 M17.7579444,1.95442222 L17.7579444,15.6222222 L32.4971,15.6222222 L32.4971,15.6041333 C35.6005778,15.4055667 37,13.4803333 37,11.1308333 C37,8.64977778 35.1245111,6.63944444 32.5998778,6.63944444 C31.9519667,6.63944444 31.4183444,6.77305556 30.8547111,7.01478889 C30.451,3.07552222 27.1090778,0 22.9942667,0 C20.9814667,0 19.1520222,0.737122222 17.7579444,1.95442222" fill="#fff"></path>
+    </symbol>
+    <symbol id="cblogo" viewBox="0 0 64 45">
+      <defs>
+        <mask id="a" x="0" y="0" width="64" height="26" fill="#fff">
+          <path d="M13 19l2 2-9 11 9 11-2 2L0 32l13-13zm38 0l-2 2 9 11-9 11 2 2 13-13-13-13z"/>
+        </mask>
+        <mask id="b" x="0" y="0" width="24" height="23" fill="#fff">
+          <path d="M30.44 22.44s-5.487.9-8.316-1.93c-2.83-2.829-1.93-8.316-1.93-8.316s5.487-.9 8.317 1.93 1.93 8.317 1.93 8.317zm2.754 0s5.487.9 8.317-1.93c2.83-2.829 1.93-8.316 1.93-8.316s-5.488-.9-8.317 1.93c-2.83 2.83-1.93 8.317-1.93 8.317zM31.864 17S27 13.194 27 8.64C27 3.805 31.865 0 31.865 0S37 3.806 37 8.64c0 4.554-5.135 8.36-5.135 8.36z"/>
+        </mask>
+        <mask id="c" x="0" y="0" width="30" height="14.483" fill="#fff">
+          <path d="M24.241 38.483a7.241 7.241 0 1 0 0-14.483 7.241 7.241 0 0 0 0 14.483zm14.483 0a7.241 7.241 0 1 0 0-14.483 7.241 7.241 0 0 0 0 14.483z"/>
+        </mask>
+        <mask id="d" x="0" y="0" width="16" height="16" fill="#fff">
+          <circle cx="32" cy="33" r="8"/>
+        </mask>
+      </defs>
+      <g fill="none" fill-rule="evenodd">
+        <path d="M13 19l2 2-9 11 9 11-2 2L0 32l13-13zm38 0l-2 2 9 11-9 11 2 2 13-13-13-13z" stroke="#000" mask="url(#a)" stroke-width="1" fill="#4A4A4A"/>
+        <path fill="#000" d="M31.316 15.723h1v14.639h-1z"/>
+        <path d="M30.44 22.44s-5.487.9-8.316-1.93c-2.83-2.829-1.93-8.316-1.93-8.316s5.487-.9 8.317 1.93 1.93 8.317 1.93 8.317zm2.754 0s5.487.9 8.317-1.93c2.83-2.829 1.93-8.316 1.93-8.316s-5.488-.9-8.317 1.93c-2.83 2.83-1.93 8.317-1.93 8.317zM31.864 17S27 13.194 27 8.64C27 3.805 31.865 0 31.865 0S37 3.806 37 8.64c0 4.554-5.135 8.36-5.135 8.36z" stroke="#000" mask="url(#b)" stroke-width="1" fill="#7ED321"/>
+        <path d="M24.241 38.483a7.241 7.241 0 1 0 0-14.483 7.241 7.241 0 0 0 0 14.483zm14.483 0a7.241 7.241 0 1 0 0-14.483 7.241 7.241 0 0 0 0 14.483z" stroke="#000" mask="url(#c)" stroke-width="1" fill="currentColor"/>
+        <circle cx="32" cy="33" r="8" stroke="#000" mask="url(#d)" stroke-width="1" fill="currentColor"/>
+      </g>
+    </symbol>
+    <symbol id="masthead-bg" viewBox="0 0 1440 579">
+      <g id="DRT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-V3" transform="translate(0.000000, -65.000000)">
+          <g id="Group-13" transform="translate(-768.000000, -695.000000)">
+            <ellipse id="Oval-3" fill="currentColor" opacity="0.624660326" transform="translate(1837.652578, 821.225312) rotate(22.000000) translate(-1837.652578, -821.225312) " cx="1837.65258" cy="821.225312" rx="945.513239" ry="262.349849"></ellipse>
+            <path d="M1012.18955,833.62704 C1703.63039,795.553935 2053.41047,560.915933 2053.41047,404.236853 C2053.41047,247.557773 1601.93896,120.544282 1045.02063,120.544282 C488.102301,120.544282 36.6307931,247.557773 36.6307931,404.236853 C36.6307931,560.915933 320.748709,871.700146 1012.18955,833.62704 Z" id="Oval-3" fill="currentColor" opacity="0.166326993" transform="translate(1045.020630, 478.687333) rotate(-7.000000) translate(-1045.020630, -478.687333) "></path>
+            <path d="M1766,1066 C2238.75575,1066 2434,1067.44993 2434,862 C2434,656.550073 1888.75575,315 1416,315 C943.244254,315 482,166.550073 482,372 C482,577.449927 1293.24425,1066 1766,1066 Z" id="Oval-4" fill="currentColor" opacity="0.100000001"></path>
+          </g>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="close" viewBox="0 0 12 12">
+      <path d="M6 4.586l4.24-4.24c.395-.395 1.026-.392 1.416-.002.393.393.39 1.024 0 1.415L7.413 6l4.24 4.24c.395.395.392 1.026.002 1.416-.393.393-1.024.39-1.415 0L6 7.413l-4.24 4.24c-.395.395-1.026.392-1.416.002-.393-.393-.39-1.024 0-1.415L4.587 6 .347 1.76C-.05 1.364-.048.733.342.343c.393-.393 1.024-.39 1.415 0L6 4.587z" fill-rule="evenodd"></path>
+    </symbol>
+    <symbol id="left-arrow" viewBox="0 0 72 122">
+      <g transform="rotate(180 35.450000762939446,60.29999923706055)">
+        <path stroke="currentColor" fill="currentColor" stroke-width="8" d="m11.4,117.3c-0.8,0.8 -1.8,1.2 -2.9,1.2s-2.1,-0.4 -2.9,-1.2c-1.6,-1.6 -1.6,-4.2 0,-5.8l51,-51l-51,-51c-1.6,-1.6 -1.6,-4.2 0,-5.8c1.6,-1.6 4.2,-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z"/>
+      </g>
+    </symbol>
+    <symbol id="right-arrow" viewBox="0 0 72 122">
+      <path stroke="currentColor" fill="currentColor" stroke-width="8" d="m11.4,117.3c-0.8,0.8 -1.8,1.2 -2.9,1.2s-2.1,-0.4 -2.9,-1.2c-1.6,-1.6 -1.6,-4.2 0,-5.8l51,-51l-51,-51c-1.6,-1.6 -1.6,-4.2 0,-5.8c1.6,-1.6 4.2,-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z"/>
+    </symbol>
+  </svg>
+</div>
+
+{% verbatim %}
+
+<ng-view></ng-view>
+<div id="wrapper" class="pb4" ui-view="wrapper"></div>
+
+{% endverbatim %}
+
+{#<script src="//my.hellobar.com/5110db69cecb1963ea9b2ae7d8ea4dbe57872266.js" type="text/javascript" charset="utf-8" async="async"></script>#}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-resource.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-animate.min.js"></script>
+
+{% load assets %}
+{% assets 'components' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+{% assets 'app' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+{% assets 'index' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+
+</body>
+</html>

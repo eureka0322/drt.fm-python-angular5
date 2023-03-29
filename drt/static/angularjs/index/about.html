@@ -1,0 +1,55 @@
+<div class="about-view">
+    <div class="pb4 lh-26 p2">
+
+        <div class="col-12 md-col-6 mx-auto">
+            <h2 class="main-font m0 mb1 f22w500">About 💁🏾‍♂️</h2>
+            <p class="f18 py0 m0 m-b15 main-font lh-26">Dorm Room Tycoon is a podcast show for designers, developers, growth hackers and founders. Each interview cuts to the chase, uncovering unique and practical insights. The show doesn’t celebrate the guests’ accomplishments or take a trip down memory lane; rather the show is concerned about startup lessons and first principles.</p>
+            <p class="f18 py0 m0 m-b3 main-font lh-26">The host, <a class="main-color" href="http://twitter.com/williamchanner" title="William Channer" target="_blank">William Channer</a>, is co-founder of <a class="main-color" href="http://usepanda.com/" title="Panda" target="_blank">Panda</a>, editor of <a class="main-color" href="http://interfacelovers.com/" title="Interface Lovers" target="_blank">Interface Lovers</a> and co-author of <a class="main-color" href="https://www.amazon.com/Ways-Connect-Interface-Product-Design-ebook/dp/B00DUEF14S" title="Ways to Connect" target="_blank">Ways to Connect</a>. He has also written for the Guardian. He graduated from Imperial College London and now lives in Berlin.</p>
+
+            <h2 class="main-font m0 mb1 f22w500">Mission 🚀</h2>
+            <p class="f18 py0 m0 m-b3 main-font lh-26">To inspire those with just an idea to go out and create the change they want to see in the world. And to equip them with the knowledge to find product/market fit, traction and success.</p>
+
+            <h2 class="main-font m0 mb2 f22w500">Love 😍</h2>
+            <div class="quotes-wrapper m-b3 mt3 mx-auto">
+                <slick infinite=false slides-to-show=3 slides-to-scroll=1 draggable=false prev-arrow="#prev-arrow" next-arrow="#next-arrow" responsive="vm.responsiveConfig">
+                    <div class="quote-item" ng-repeat="tweetID in vm.tweetIds track by $index">
+                        <twitter-widget
+                                twitter-widget-id="tweetID"
+                                twitter-widget-options="{'conversation': 'none', 'cards': 'hidden', 'chrome': 'noborders'}"
+                                twitter-widget-on-rendered="vm.onTweetWidgetLoad()"
+                        ></twitter-widget>
+                    </div>
+                </slick>
+                <button id="prev-arrow" class="quotes-nav slick-prev" ng-show="vm.tweetLoaded">
+                    Prev
+                    <svg class="icon" width="20px" height="40px"><use xlink:href='#left-arrow'></use></svg>
+                </button>
+                <button id="next-arrow" class="quotes-nav slick-next" ng-show="vm.tweetLoaded">
+                    Next
+                    <svg class="icon" width="20px" height="40px"><use xlink:href='#right-arrow'></use></svg>
+                </button>
+            </div>
+            <h2 class="main-font m0 mb1 f22w500">Follow 🐦</h2>
+            <ul class="list-reset main-font m0 m-b3 f18 lh-26">
+                <li class=""><a class="main-color" href="https://itunes.apple.com/us/podcast/dorm-room-tycoon/id355125543?mt=2" title="iTunes" target="_blank">iTunes</a></li>
+                <!-- <li class=""><a class="main-color" href="https://soundcloud.com/dormroomtycoon" title="SoundCloud" target="_blank">SoundCloud</a></li> -->
+                <li class=""><a class="main-color" href="http://feeds.feedburner.com/DormRoomTycoon" title="RSS" target="_blank">RSS</a></li>
+                <li class=""><a class="main-color" href="" title="Newsletter" target="" ng-click="vm.openNewletter($event)">Newsletter</a></li>
+                <li class=""><a class="main-color" href="https://twitter.com/williamchanner" title="@williamchanner" target="_blank">@williamchanner</a></li>
+                <li class=""><a class="main-color" href="https://twitter.com/dormroomtycoon" title="@dormroomtycoon" target="_blank">@dormroomtycoon</a></li>
+            </ul>
+
+            <h2 class="main-font m0 mb1 f22w500">Contact 📬</h2>
+            <p class="f18 py0 m0 m-b3 main-font lh-26">The best way to get in touch is to email <a class="main-color" href="mailto:william@drt.fm" target="_blank">william@drt.fm</a>. Interview requests are not being accepted but feel free to say hi or find out more about sponsorship.</p>
+
+            <a href="http://codeberry.io" class="credits subtext-color flex items-center m0 h5 bold main-font">
+                <span class="mr2 mt2">Website by</span>
+
+                <svg class="main-color" width="64px" height="48px"><use xlink:href="#cblogo"></use></svg>
+
+                <span class="ml2 mt2">Codeberry</span>
+            </a>
+
+        </div>
+    </div>
+</div>

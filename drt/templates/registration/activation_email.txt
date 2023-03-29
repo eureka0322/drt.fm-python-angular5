@@ -1,0 +1,3 @@
+Thanks for registering. In order to activate your account please visit the following link:
+
+http://{{site}}/api/auth/activate/{{activation_key}}/

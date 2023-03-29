@@ -1,0 +1,71 @@
+<div class="group clearfix" infinite-scroll='vm.posts.more()'
+     infinite-scroll-disabled='vm.posts.busy' infinite-scroll-distance='1' infinite-scroll-listen-for-event="list:filtered">
+  <div class="card-container" ng-repeat="card in vm.posts.items">
+    <div class="card relative pointer" ng-class="{'is-playing': card.id == vm.player.item.id}" ng-click="vm.show(card)">
+      <div class="card-top relative z1">
+
+        <header class="card-header absolute bottom-0 left-0 z2" ng-hide="card.id == vm.player.item.id" ng-if="vm.selected_id != card.id">
+          <h4 class="card-guest bg-darken-80 white p1 m0 main-font inline-block bold xs-hide left">{{card.guest}}</h4>
+          <h5 class="bg-darken-80 white p1 m0 main-font regular inline-block mb1 xs-hide left">{{card.job}}</h5>
+        </header>
+
+        <div class="relative z2 flex items-center h100 center xs-hide" ng-show="card.id == vm.player.item.id">
+          <a href class="outline-button white border bg-none rounded" ng-click="vm.show(card)">View profile</a>
+        </div>
+
+        <div class="card-image absolute top-0 left-0 right-0 bottom-0 col-12 h100 z1"
+             ng-style="{'background': 'url(\'' + card.image + '?fit=crop&w=408&h=408&crop=faces&auto=format,compress&cs=tinysrgb\') no-repeat center center/cover'}"
+             ng-class="{'blur-filter': card.id == vm.player.item.id}" ng-if="vm.deviceCheck=='desktop'"></div>
+
+        <div class="card-image absolute top-0 left-0 right-0 bottom-0 col-12 h100 z1"
+             ng-style="{'background': 'url(\'' + card.image + '?fit=crop&w=64&h=64&crop=faces&auto=format,compress&cs=tinysrgb&dpr=2\') no-repeat center center/cover'}"
+             ng-class="{'blur-filter': card.id == vm.player.item.id}" ng-if="vm.deviceCheck=='mobile'"></div>
+
+      </div>
+
+      <div class="card-bottom bg-white main-font p1 relative z2">
+
+        <div ng-if="card.id == vm.player.item.id" class="control-button circle absolute right-0 top-0"
+             ng-class="{'loading': vm.player._loading}">
+        </div>
+        <button ng-if="card.id != vm.player.item.id || (card.id == vm.player.item.id && !vm.player._playing && !vm.player._loading)"
+                class="control-button circle absolute right-0 top-0" ng-click="vm.play(card);$event.stopPropagation()">
+          <svg class="" width="32px" height="32px"><use xlink:href="#play-btn"></use></svg>
+        </button>
+        <button ng-if="card.id == vm.player.item.id && vm.player._playing && !vm.player._loading"
+                class="control-button circle absolute right-0 top-0"
+                ng-click="vm.pause();$event.stopPropagation()" ng-class="{'is-playing': vm.player._playing}">
+          <svg class="" width="32px" height="32px"><use xlink:href="#pause-btn"></use></svg>
+        </button>
+
+        <h2 class="m0 card-title f20 mt2 main-font">
+           <span class="bold">{{card.title}}</span>
+          <span class="main-font h5 block sm-hide sm-hide md-hide lg-hide xl-hide">{{card.guest}}</span>
+        </h2>
+
+        <div class="xs-hide" ng-show="card.id == vm.player.item.id">
+
+          <div class="mt1">
+            <span class="subtext-color h6">Interview with</span>
+            <div class="text-color h4 main-font bold">{{card.guest}}</div>
+            <div class="text-color h5 main-font bold"><span class="subtext-color h6">by</span> William Channer</div>
+          </div>
+
+          <div class="flex items-end mt1">
+            <div class="flex-first">
+              <span class="block h6 main-font subtext-color">Length</span>
+              <span class="h6 main-font bold">{{card.duration}}</span>
+            </div>
+            <div class="flex-auto"></div>
+            <div class="flex-last right-align">
+              <span class="block h6 main-font subtext-color">Date</span>
+              <span class="h6 main-font bold">{{card.date | date : 'dd MMMM yyyy'}}</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

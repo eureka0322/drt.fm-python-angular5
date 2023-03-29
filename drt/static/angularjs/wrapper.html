@@ -1,0 +1,43 @@
+<header class="header z4 fixed col-12 top-0">
+  <div class="col-12 lg-col-10 mx-auto flex items-center h100">
+    <a class="drt-logo mx-auto flex-none block mt2" href ng-click="vm.home()"><svg class="main-color px1" width="130px" height="40px"><use xlink:href="#drt-logo"></use></svg></a>
+    <div class="flex-auto"></div>
+    <div class="flex-none">
+      <a href="https://itunes.apple.com/us/podcast/dorm-room-tycoon/id355125543?mt=2" target="_blank" class="nav-button inline-block px1 h4 main-font bold caps ls0">iTunes</a>
+      <a href ui-sref="drt.index.about" class="nav-button inline-block px1 h4 main-font bold caps ls0">About</a>
+    </div>
+  </div>
+
+  <form name="searchForm" class="xs-hide search-form absolute top-0 left-0 right-0 bottom-0 flex items-center" ng-class="{'has-focus': focus || searchForm.searchInput.$viewValue}">
+    <div class="col-12 block mx-auto flex items-center px2 main-color">
+      <svg class="muted xs-hide sm-hide md-hide lg-show" width="17px" height="16px"><use xlink:href="#search-icon"></use></svg>
+      <input name="searchInput" class="main-font search-input" type="search" placeholder="Search"
+             ng-model="vm.category.search" ng-model-options="{ debounce: 600 }"
+             ng-keyup="vm.cancel($event)" ng-change="vm.search()" ng-focus="focus=true" ng-blur="focus=false">
+    </div>
+  </form>
+</header>
+
+<main ng-hide="vm.style.body.includes('about-page') || !vm.showContent">
+  <div class="header md-hide lg-hide"></div>
+  <div ui-view="masthead" class="mb2" ng-cloak></div>
+  <nav class="main-nav col-12 lg-col-10 mx-auto md-flex items-center mt2" id="main-nav-section">
+    <div ui-view="navigation" class="category-nav py2 px1 mb1"></div>
+    <div class="flex-auto"></div>
+    <div class="sponsored subtext-color main-font h5 mr1">Brought to you by<span class="mx1">🐼</span><a class="main-color bold " href="http://usepanda.com/" target="_blank" >Panda</a></div>
+  </nav>
+  <section ui-view="content" class="main-content col-12 md-col-10 mx-auto">
+  </section>
+</main>
+
+<div ui-view="static">
+</div>
+
+<div ui-view="subscribe">
+</div>
+
+<div ui-view="player">
+</div>
+
+<div ui-view="profile">
+</div>

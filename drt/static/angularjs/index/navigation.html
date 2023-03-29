@@ -1,0 +1,2 @@
+<a href ng-click="vm.all()" class="subtext-color inline-block pr2 h4 main-font bold caps ls0">All</a>
+<a href ng-repeat="tab in vm.items" ng-class="{'is-active' : tab.selected}" ng-click="vm.select(tab)" class="category-button inline-block px2 h4 main-font bold caps ls0">{{tab.name}}</a>

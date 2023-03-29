@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Explore Dorm Room Tycoon. The podcast show interviews some of the most famous designers, developers and entrepreneurs.
+    names with a focus on learning.">
+  {% block header %}
+  <title>{% block title %}{{AppName}}{% endblock %}</title>
+  {% endblock header %}
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NS2DMNW');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS2DMNW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+  <nav>
+    <a href="/" title="Dorm Room Tycoon Home">DRT</a>
+    <a href="http://usepanda.us3.list-manage2.com/subscribe?u=c9215d3c9c7d11b30022104b1&amp;id=298870c1e0"
+       target="_blank" title="Subscribe to our newsletter">Subscribe</a>
+    <a href="/about" title="About Dorm Room Tycoon">About</a>
+  </nav>
+</header>
+
+<main>
+
+  <h1>About</h1>
+
+  <p>A podcast show for designers, developers and entrepreneurs. The show interviews the biggest
+    names with a focus on learning. The host, William Channer is a partner at
+    <a class="main-color" href="http://panda.network/" title="Panda Network" target="_blank">Panda Network</a> and
+    co-founded
+    <a class="main-color" href="http://usepanda.com/" title="Panda" target="_blank">Panda</a>. He co-authored
+    <a class="main-color" href="https://www.amazon.com/Ways-Connect-Interface-Product-Design-ebook/dp/B00DUEF14S"
+       title="Panda" target="_blank">Ways to Connect</a> and has written for the Guardian. He graduated from Imperial
+    College London and now lives in Berlin.</p>
+
+  <h2>500 Startups</h2>
+
+  <p>Dorm Room Tycoon has partnered with
+    <a class="main-color" href="http://500.co/" title="500 Startups" target="_blank">500 Startups</a>
+    with the vision to create a large database of useful interviews for the next generation of creators.
+    500 Startups is a leading global venture capital seed fund and startup accelerator which manage 200M in assets
+    and invest in 1300+ technology start-ups.</p>
+
+  <h2>Follow</h2>
+  <ul>
+    <li><a href="https://itunes.apple.com/us/podcast/dorm-room-tycoon/id355125543?mt=2" title="iTunes" target="_blank">iTunes</a>
+    </li>
+    <li><a href="https://soundcloud.com/dormroomtycoon" title="SoundCloud" target="_blank">SoundCloud</a></li>
+    <li><a href="http://feeds.feedburner.com/DormRoomTycoon" title="RSS" target="_blank">RSS</a></li>
+    <li><a href="" title="Newsletter" target="_blank">Newsletter</a></li>
+    <li><a href="https://twitter.com/williamchanner" title="@williamchanner" target="_blank">@williamchanner</a></li>
+    <li><a href="https://twitter.com/dormroomtycoon" title="@dormroomtycoon" target="_blank">@dormroomtycoon</a></li>
+  </ul>
+
+  <h2 class="main-font m0 mb1 f31 bold">Contact</h2>
+
+  <p class="f24 py3 m0 mb4 main-font">The best way to get in touch is to email
+    <a class="main-color" href="mailto:william@drt.fm" target="_blank">william@drt.fm</a>.
+    Interview requests are not being accepted, but feel free to say hey. </p>
+
+</main>
+
+<footer>
+
+  <a href="http://codeberry.io">Website by Codeberry</a>
+
+</footer>
+<script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+{% load assets %}
+{% assets 'angular' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+{% assets 'app' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+{% assets 'index' %}<script type="text/javascript" src="{{ ASSET_URL }}"></script>{% endassets %}
+
+</body>
+</html>

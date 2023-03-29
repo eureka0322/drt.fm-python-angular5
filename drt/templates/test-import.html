@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="The podcast show that interviews the biggest names in business, design and tech">
+  {% block header %}
+    <title>{% block title %}{{AppName}}{% endblock %}</title>
+  {% endblock header %}
+  <base href="/" />
+
+</head>
+
+<body>
+
+IMPORTED DATA
+
+<BR><BR>
+
+{% for item in items  %}
+  <div>
+    <p>
+      GUEST: {{ item.guest }}<BR>
+      TITLE: {{ item.title }}<BR>
+      DESC: {{ item.description }}<BR>
+      ABOUT: {{ item.about }}<BR>
+      QUOTE: {{ item.quote }}<BR>
+      AUDIO: {{ item.url }}<BR>
+      IMAGE: {{ item.image }}<BR>
+      EDU: {{ item.education }} - {{ item.educationUrl }}<BR>
+      JOB: {{ item.job }} - {{ item.jobUrl }}<BR>
+      MODEL: {{ item.roleModel }} - {{ item.roleModelUrl }}<BR>
+      APP: {{ item.app }} - {{ item.appUrl }}<BR>
+      BOOK: {{ item.book }} - {{ item.bookUrl }}<BR>
+      BLOG: {{ item.blog }} - {{ item.blogUrl }}<BR>
+      LOC: {{ item.location }} - {{ item.locationUrl }}<BR>
+      CAT: {{ item.category }}<BR>
+      DATE: {{ item.date }}<BR>
+    </p>
+  </div>
+{% endfor %}
+
+{#  {{ rss }}#}
+
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+<div class="profile-wrapper fixed col-12 z3 xs-hide bg-white main-font" ng-class="{'is-visible': vm.selected.visible}">
+    <div class="profile-hero col-12 white relative">
+
+        <div class="absolute right-0 z4 pointer p2" ng-click="vm.close()" style="fill: white;">
+            <svg width="12" height="12"><use xlink:href="#close"></use></svg>
+        </div>
+
+        <div class="profile-content col-12 md-col-10 mx-auto h100 pt80 relative z3 flex">
+            <div class="lg-col-8 md-col-9 px1">
+                <h2 class="main-font f22 lh1-2 m0 opacity-8">{{vm.selected.guest}}, {{vm.selected.job}}</h2>
+                <h1 class="main-font f47 strong m0 mb1">{{vm.selected.title}}</h1>
+                <p class="main-font f18 opacity-8 lh-26">{{vm.selected.description}}</p>
+                <div class="flex flex-last flex-none items-center ng-scope">
+
+
+                    <div class="flex items-center mr15">
+                        <button ng-if="vm.selected.id != vm.player.item.id || (vm.selected.id == vm.player.item.id && !vm.player._playing && !vm.player._loading)"
+                                class="control-button circle" ng-click="vm.toggle();$event.stopPropagation()">
+                            <svg class="" width="45px" height="45px"><use xlink:href="#play-btn"></use></svg>
+                        </button>
+                        <button ng-if="vm.selected.id == vm.player.item.id && (vm.player._playing || vm.player._loading)"
+                                class="control-button circle"
+                                ng-click="vm.toggle();$event.stopPropagation()" ng-class="{'is-playing': vm.player._playing}">
+                            <svg class="" width="45px" height="45px"><use xlink:href="#pause-btn"></use></svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center mr15">
+                        <a class="player-btn main-font bold bg-blue white rounded-50 hover-blue pointer pl15"
+                           href="https://itunes.apple.com/us/podcast/dorm-room-tycoon/id355125543?mt=2" target="_blank"
+                           style="height: 48px; width: 164px; text-align: center; line-height: 32px; font-size: 16px">
+                            LISTEN ON<span class="sssocial-font pl2">APPLE</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center mr15 social-icons-container pt1">
+                        <a ng-href="http://www.facebook.com/sharer.php?u=https://drt.fm/{{vm.selected.slug}}" class="sssocial-font pointer social-icon mr15">Facebook</a>
+                        <a ng-href="https://twitter.com/intent/tweet?output=embed&text=Listen to {{vm.selected.title}} by @{{vm.selected.twitter}} on @dormroomtycoon https://drt.fm/{{vm.selected.slug}}"
+                           class="sssocial-font pointer social-icon mr15">twitter</a>
+<!--                        <a href="https://mail.com" class="sssocial-font pointer social-icon">Email</a>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute top-0 right-0 z2 flex" style="height: 400px;">
+            <div class="mx-auto" style="width: 700px; height: 400px;">
+                <div class="profile-hero-bg rounded block flex-none col-12 h100"
+                     ng-style="{'background-image': 'url(\'' + vm.encodedImageURI + '\')'}">
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute top-0 right-0 bottom-0 left-0 z1 bg-blue"></div>
+
+    </div>
+
+    <div ng-if="vm.sponsorship" class="profile-sponsor col-12 black flex pt2 main-font"
+         style="color: #515151; background-color: #FAFAFA; height: 60px; line-height: 23px;" id="profile-sponsor-container" >
+        <div class="mx-auto mx1" ng-bind-html="vm.sponsorship"></div>
+    </div>
+
+    <div class="col-12">
+
+        <div class="flex md-col-10 mx-auto flex-auto pt80 pb80">
+
+            <div class="lg-col-6 md-col-8 pl1 sm-col-9 xs-hide sm-px2">
+
+                <div class="relative mxn2 p2 mb40 bg-see-blue" style="border-radius: 7px;">
+                    <p class="h2 main-font f22 blue m0" style="line-height: 29px;">{{vm.selected.quote}}</p>
+                    <a href="https://twitter.com/intent/tweet?output=embed&text=Listen to {{vm.player.item.title}} by @{{vm.player.item.twitter}} on @dormroomtycoon https://drt.fm/{{vm.player.item.slug}}"
+                       class="z2 profile-twitter hover-blue items-center absolute right-0 bottom-0 pointer"
+                       data-show-count="false" data-url="{{vm.player.item.slug}}"
+                       data-size="0" data-via="{{vm.player.item.twitter}}" data-text="{{vm.player.item.title}}">
+                        <svg class="" width="20px" height="20px"><use xlink:href="#twitter-btn"></use></svg>
+                    </a>
+
+                </div>
+
+                <h3 class="h3 main-font bold lh-25 mb2-5">About {{vm.selected.guest}}</h3>
+
+                <p class="text-color f18 lh-26 pb0 mb0" ng-bind-html="vm.about" id="profile-about-container"></p>
+
+            </div>
+
+            <div class="flex-auto"></div>
+
+            <div class="lg-col-4 md-col-3 pl2 sm-col-3 xs-hide">
+
+                <div class="p1 border-right border-white rounded-left">
+                    <span class="block h5 main-font subtext-color">Twitter</span>
+                    <a class="blue" ng-href="https://twitter.com/{{vm.selected.twitter}}" target="_blank">
+                        <span class="block f18 main-font bold">@{{vm.selected.twitter}}</span>
+                    </a>
+                </div>
+
+                <div class="p1 border-right border-white">
+                    <span class="block h5 main-font subtext-color">Education</span>
+                    <a class="blue" ng-href="{{vm.selected.educationUrl}}" target="_blank" ng-if="vm.selected.educationUrl">
+                        <span class="block f18 main-font bold">{{vm.selected.education}}</span>
+                    </a>
+                    <span class="block f18 main-font bold text-color" ng-if="!vm.selected.educationUrl">{{vm.selected.education}}</span>
+                </div>
+
+                <div class="p1 border-right border-white">
+                    <span class="block h5 main-font subtext-color">Favourite app</span>
+                    <a class="blue" ng-href="{{vm.selected.appUrl}}" target="_blank" ng-if="vm.selected.appUrl">
+                        <span class="block f18 main-font bold">{{vm.selected.app}}</span>
+                    </a>
+                    <span class="block f18 main-font bold text-color" ng-if="!vm.selected.appUrl">{{vm.selected.app}}</span>
+                </div>
+
+                <div class="p1 border-right border-white">
+                    <span class="block h5 main-font subtext-color">Favourite book</span>
+                    <a class="blue" href="{{vm.selected.bookUrl}}" target="_blank" ng-if="vm.selected.bookUrl">
+                        <span class="block f18 main-font bold">{{vm.selected.book}}</span>
+                    </a>
+                    <span class="block f18 main-font bold text-color" ng-if="!vm.selected.bookUrl">{{vm.selected.book}}</span>
+                </div>
+
+                <div class="p1 rounded-right">
+                    <span class="block h5 main-font subtext-color">Role model</span>
+                    <a class="blue" ng-href="{{vm.selected.roleModelUrl}}" target="_blank" ng-if="vm.selected.roleModelUrl">
+                        <span class="block f18 main-font bold">{{vm.selected.roleModel}}</span>
+                    </a>
+                    <span class="block f18 main-font bold text-color" ng-if="!vm.selected.roleModelUrl">{{vm.selected.roleModel}}</span>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="grey-bg">
+            <div class="flex md-col-10 mx-auto flex-auto pt80 pb4">
+
+                <div class="lg-col-6 md-col-8 pl1 sm-col-9 xs-hide sm-px2 trimmed" id="profile-transcript-container" ng-if="vm.transcript != ''">
+                    <div class="profile-transcript-content-container">
+                        <div>
+                            <p class="text-color f20 lh-26 pb24 mb0"><strong>Interview Transcript</strong></p>
+                        </div>
+                        <div ng-bind-html="vm.transcript" class="f18 transcript-content-container"></div>
+                    </div>
+
+                    <div class="read-more-container">
+                        <button class="btn btn-primary continue-reading-btn" ng-click="vm.toggleTrim()" ng-if="vm.transcriptTrimmed">Continue Reading</button>
+                        <button class="btn btn-primary continue-reading-btn" ng-click="vm.toggleTrim()" ng-if="!vm.transcriptTrimmed">Close Transcript</button>
+                    </div>
+                </div>
+
+                <div class="flex-auto">
+                </div>
+
+                <div class="lg-col-4 md-col-3 pl2 sm-col-3 xs-hide">
+                    <div class="sponsor-sidebar-container">
+                        <div class="sponsor-image-container">
+                            <a ng-href="{{ vm.selected.sponsorship_image_link }}" target="_blank">
+                                <img ng-if="vm.sponsorship_image" ng-src="{{ vm.sponsorship_image }}" />
+                            </a>
+                        </div>
+                        <div ng-if="vm.sponsorship_image_text" class="profile-sponsor col-12 black flex pt2 main-font max-360">
+                            <div ng-bind-html="vm.sponsorship_image_text"></div>
+                        </div>
+                    </div>
+
+
+                    <div class="recommented-interviews-container">
+                        <h3 class="h3 main-font bold lh-25 my0 light-black-color">Recommended Interviews</h3>
+                        <div class="py1">
+                            <div class="flex items-center mt2 flex-auto xs-hide sm-hide pointer"
+                                 ng-repeat="card in vm.selected.recommended"
+                                 ng-class="{'is-playing': card.id == vm.player.item.id}"
+                                 ui-sref="drt.index.card({ card: card.slug })">
+                                <div class="flex-none"
+                                     ng-style="{'background': 'url(\'' + card.image + '?fit=crop&w=80&h=80\') no-repeat center center/cover'}"
+                                     style="width: 3.75rem; height: 3.75rem;"></div>
+                                <div class="ml2 flex-auto">
+                                    <h5 class="m0 main-font bold h4 truncate light-black-color">{{card.title}}</h5>
+                                    <p class="m0 h5 main-font truncate light-grey-color">{{card.guest}}, {{card.job}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="weekly-newsletter-container">
+                        <h3 class="h3 main-font bold lh-25 my0 light-black-color">Weekly Newsletter</h3>
+                        <div class="col-12 black flex pt2 main-font">
+                            <div class="max-360">Want to build a successful startup? Enter your email and get inspired by those that have already done it 💪</div>
+                        </div>
+                        <div>
+                            <form name="subscribeForm" ng-submit="vm.doSubmit($event)" action="https://mailblast.io/lists/cf16df11-82ce-43a6-95b3-27281db3f0ad/subscribers/create_external"
+                                  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                  novalidate class="flex flex-wrap content-center justify-center py2">
+                                <input id="mb-email" type="email" value="" ng-model="email" ng-change="vm.restoreBtn()"
+                                       name="subscriber[email]" class="input main-font col-8 lg-col-7" placeholder="Email your email address" autocomplete="off" />
+                                <input type="hidden" name="mb_cf16df1182ce43a695b327281db3f0ad" tabindex="-1" value="" />
+                                <div class="pl1 col-4 lg-col-5">
+                                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" ng-class="{'load': vm.subscriptionLoading }"
+                                            class="btn subscribe-btn btn-main-on-hover main-font bold items-center pointer profile-subscribe-container">
+                                        <span ng-if="vm.subscriptionLoading == false">{{ vm.submitBtn }}</span>
+                                        <span class="icon-loading loading-small mx-auto loading-icon-container" ng-if="vm.subscriptionLoading" />
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="panda-jobs-container">
+
+                        <h3 class="h3 main-font bold lh-25 mb2-5">Panda Jobs</h3>
+
+                        <a ng-repeat="job in vm.jobs.jobs" class="pl1 flex" style="margin-bottom: 20px; color: #2D2D2D; text-decoration: none;"
+                           href="http://panda.jobs/{{ job.id }}/{{ job.url }}" target="_blank" rel="nofollow">
+
+                            <div class="square2 xs-hide sm-hide md-hide mr1">
+                                <img ng-src="{{ job.company.logo }}" width="32" height="32" style="max-width: 32px; width: 32px; height: 32px;">
+                            </div>
+
+                            <div class="flex-auto">
+                                <div class="h4 main-font bold" style="line-height: 1.125">{{ job.title }}</div>
+                                <div class="h5 main-font" style="line-height: 1.3; color: #797979;">{{ job.company.title }}</div>
+                            </div>
+
+                        </a>
+
+                        <a class="blue pl1" href="http://panda.jobs/" target="_blank" rel="nofollow">See more</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="profile-footer">
+
+        <div class="profile-footer-content md-col-10 mx-auto">
+            <div>
+                <a href="#"><img src="/static/images/podcast-icon-6.png" width="60" /></a>
+            </div>
+
+            <div class="podcast-text-container">
+                <h1 class="main-font f47 strong m0 mb1">
+                    Walk with the best founders 🚶‍♀️
+                </h1>
+                <p class="main-font f18 lh-26">
+                    On your cold morning commute to the office, during a quick 15 minute coffee break or whilst at the gym. They won't mind, trust us.
+                </p>
+            </div>
+            <div class="flex items-center">
+                <a class="player-btn main-font bold bg-blue white rounded-50 hover-blue pointer pl15"
+                   href="https://itunes.apple.com/us/podcast/dorm-room-tycoon/id355125543?mt=2" target="_blank"
+                   style="height: 48px; width: 164px; text-align: center; line-height: 32px; font-size: 16px">
+                    LISTEN ON<span class="sssocial-font pl2">APPLE</span>
+                </a>
+            </div>
+
+            <div class="bars-image-container">
+                <img src="/static/images/Bars.png" />
+            </div>
+
+        </div>
+
+    </div>
+</div>

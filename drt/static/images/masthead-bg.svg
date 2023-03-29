@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="579px" viewBox="0 0 1440 579" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Homepage V3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E7E8EB" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="59.9869277%" y1="57.8641393%" x2="-26.216945%" y2="96.3851804%" id="linearGradient-2">
+            <stop stop-color="#398ECF" offset="0%"></stop>
+            <stop stop-color="#39B6CF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="64.7607252%" y1="69.7170634%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#398ECF" offset="0%"></stop>
+            <stop stop-color="#39B4CF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="DRT" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-V3" transform="translate(0.000000, -65.000000)">
+            <rect id="Container" fill="url(#linearGradient-1)" x="0" y="-1" width="1440" height="645"></rect>
+            <g id="Group-13" transform="translate(-768.000000, -695.000000)">
+                <ellipse id="Oval-3" fill="url(#linearGradient-2)" style="mix-blend-mode: multiply;" opacity="0.624660326" transform="translate(1837.652578, 821.225312) rotate(22.000000) translate(-1837.652578, -821.225312) " cx="1837.65258" cy="821.225312" rx="945.513239" ry="262.349849"></ellipse>
+                <path d="M1012.18955,833.62704 C1703.63039,795.553935 2053.41047,560.915933 2053.41047,404.236853 C2053.41047,247.557773 1601.93896,120.544282 1045.02063,120.544282 C488.102301,120.544282 36.6307931,247.557773 36.6307931,404.236853 C36.6307931,560.915933 320.748709,871.700146 1012.18955,833.62704 Z" id="Oval-3" fill="url(#linearGradient-3)" style="mix-blend-mode: multiply;" opacity="0.166326993" transform="translate(1045.020630, 478.687333) rotate(-7.000000) translate(-1045.020630, -478.687333) "></path>
+                <path d="M1766,1066 C2238.75575,1066 2434,1067.44993 2434,862 C2434,656.550073 1888.75575,315 1416,315 C943.244254,315 482,166.550073 482,372 C482,577.449927 1293.24425,1066 1766,1066 Z" id="Oval-4" fill="url(#linearGradient-3)" style="mix-blend-mode: multiply;" opacity="0.100000001"></path>
+            </g>
+        </g>
+    </g>
+</svg>

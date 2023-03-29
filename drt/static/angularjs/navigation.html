@@ -1,0 +1,4 @@
+<a href ng-class="{'is-active' : vm.category.selected.name == 'search'}" ng-click="vm.search()" class="category-button inline-block pr2 h4 main-font bold caps ls0" ng-show="vm.category.search">Search</a>
+<a href ng-class="{'is-active' : vm.category.selected.name == 'all'}" ng-click="vm.clickedAll()" class="category-button inline-block px2 h4 main-font bold caps ls0">Latest</a>
+<a href ng-class="{'is-active' : vm.category.selected.slug == 'popular'}" ng-click="vm.popular()" class="category-button inline-block px2 h4 main-font bold caps ls0">Popular</a>
+<a href ng-repeat="tab in vm.items" ng-class="{'is-active' : vm.category.selected == tab}" ng-click="vm.select(tab)" class="category-button inline-block px2 h4 main-font bold caps ls0">{{tab.name}}</a>

@@ -1,0 +1,27 @@
+/* Its raw css file - not for css preprocessor - directly edited */
+
+
+
+@media (max-width: 1023px) {
+    .masthead .description {
+        /*max-width: inherit;*/
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: .5em;
+        padding-left: 1em;
+    }
+}
+
+@media (max-width: 76em) {
+    .category-nav {
+        width: 100vw;
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        padding: 1rem;
+    }
+    .category-nav::-webkit-scrollbar { display: none;}
+    .category-nav .category-button:last-child{margin-right: 2rem;}
+    .sponsored { display: none; }
+}

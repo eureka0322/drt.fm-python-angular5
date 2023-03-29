@@ -1,0 +1,33 @@
+<div class="drt-player fixed bottom-0 col-12 z4" ng-class="{'is-playing': vm.player.item}">
+  <div class="player-wrapper flex items-center col-12 lg-col-12 mx-auto h100">
+
+    <div class="col-12 md-col-8 lg-col-6 plyr--container">
+      <drt-plyr></drt-plyr>
+    </div>
+
+    <div class="flex items-center pl2 flex-auto xs-hide sm-hide pointer" ui-sref="drt.index.card({ card: vm.player.item.slug })" ng-if="vm.player.item">
+      <div class="flex-none" ng-style="{'background': 'url(\'' + vm.player.item.image + '?fit=crop&w=80&h=80\') no-repeat center center/cover'}" style="width: 2.5rem; height: 2.5rem;"></div>
+      <div class="ml2 flex-auto">
+        <h5 class="m0 main-font bold h4 truncate">{{vm.player.item.title}}</h5>
+        <p class="m0 h5 main-font truncate">{{vm.player.item.guest}}, {{vm.player.item.job}}</p>
+      </div>
+    </div>
+
+    <div class="flex flex-last flex-none items-center pl2 pr1 xs-hide sm-hide md-hide" ng-if="vm.player.item">
+
+      <div class="flex items-center mr20 social-icons-container pt1">
+        <a ng-href="http://www.facebook.com/sharer.php?u=https://drt.fm/{{vm.player.item.slug}}" class="sssocial-font pointer social-icon mr20">Facebook</a>
+        <a ng-href="https://twitter.com/intent/tweet?output=embed&text=Listen to {{vm.player.item.title}} by @{{vm.player.item.twitter}} on @dormroomtycoon https://drt.fm/{{vm.player.item.slug}}"
+           class="sssocial-font pointer social-icon">twitter</a>
+        <!--   class="sssocial-font pointer social-icon mr2">twitter</a>
+        <a href="https://mail.com" class="sssocial-font pointer social-icon">Email</a>-->
+      </div>
+
+      <a href="{{ vm.player.item.download_url }}" title="{{vm.player.item.title}}"
+         class="player-btn main-color flex items-center rounded-50">
+        <span class="main-font h6 bold" style="line-height: 14px">Download</span>
+      </a>
+    </div>
+
+  </div>
+</div>
